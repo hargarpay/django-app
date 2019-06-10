@@ -1,0 +1,34 @@
+.pt-10-pb-30{
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+
+.curve-top{
+    border-top-right-radius: 200% 50%;
+    border-top-left-radius: 200% 50%;
+    border-bottom-left-radius: 200% 50%;
+    border-bottom-right-radius: 200% 50%;
+}
+
+.category{
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: 0.5s all;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.category .fa{
+    font-size: 50px;
+}
+
+.category:hover{
+    transform: scale(1.2)
+}
+
+.page-min-height{
+    min-height: calc(100vh - 80px);
+}

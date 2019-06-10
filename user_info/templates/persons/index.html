@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block title %} Welcome Page {% endblock %}
+
+{% block content %}
+<!-- Beginning of the main content -->
+<section class="content bg-light-grey pt-10-pb-30">
+        <div class="cols">
+            <div class="col-12">
+                    <div class="container">
+                        <div class="col-12 text-center">
+                            <h1 class="">Welcome Page</h1>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci nisi totam iste quod sit quisquam non deleniti dolorum doloribus consequuntur distinctio id vel blanditiis labore a unde dicta, nemo vero!</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="cols bg-white curve-top curve-bottom p40">
+            <div class="container">
+                <div class="cols">
+                    <div class="col-6">
+                        <a href="{% url 'add' %}">
+                            <div class="category bg-blue">
+                                <div class="inner-box text-center">
+                                    <h3>Add User</h3>
+                                    <i class="fa fa-user-plus"></i>
+                                </div>
+                                
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="{% url 'list' %}">
+                            <div class="category bg-dark-peach">
+                                    <div class="inner-box text-center">
+                                        <h3>View Users</h3>
+                                        <i class="fa fa-users"></i>
+                                    </div>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- End of the main content -->
+{% endblock %}

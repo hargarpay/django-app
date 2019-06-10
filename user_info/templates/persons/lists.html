@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %} List Users {% endblock %}
+
+{% block content %}
+   <!-- Beginning of the main content -->
+   <section class="content bg-white p40 page-min-height">
+        <div class="container">
+            <div class="cols bg-white ">
+                <div class=" col-offset-2 col-8 paddingless-top">
+                    <div class="table">
+                        <table class="serial">
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Fullname</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if persons%}
+                                {% for person in persons%}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td data-title="Fullname">{{ person.fullname }}</td>
+                                    <td data-title="Email"> {{ person.email }} </td>
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <tr>
+                                    <td colspan="3"> No record has been created </td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of the main content -->
+{% endblock %}

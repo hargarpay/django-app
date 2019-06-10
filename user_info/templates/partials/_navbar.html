@@ -1,0 +1,36 @@
+<header class="bg-dark-peach">
+        <nav class="navbar container">
+            <div class="nav-brand">
+                <div class="narbar-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-right">
+                    <div class="nav-list">
+                        <div class="nav-item {% if '/' == request.path %} active {% endif %}">
+                            <a href="{% url 'index' %}">
+                                Home
+                            </a>
+                        </div>
+                        <div class="nav-item {% if 'list' in request.path %} active {% endif %}">
+                            <a href="{% url 'list' %}">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-left">
+                    <div class="nav-list">
+                        <div class="nav-item {% if 'add' in request.path %} active {% endif %}">
+                            <a href="{% url 'add' %}">
+                                Add User
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+</header>

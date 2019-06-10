@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %} Add User {% endblock %}
+
+{% block content %}
+<section class="p40 page-min-height">
+        <div class="container">
+            <div class="cols">
+                <div class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-10">
+                    <div class="cols">
+                        <div class="col-offset-2 col-8 bdr-blue bg-light-grey">
+                            <div class="form-header bg-blue">
+                                <h1> <i class="fa fa-user-plus"></i> Add User</h1>  
+                            </div>
+                            <form action="{% url 'add' %}" method="post">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="text-center" for="{{ field.id_for_label }}">{{ field.html_name | title }}</label>
+                                        <div class="input">
+                                            {{ field }}
+                                        </div>
+                                        {% for error in field.errors %}
+                                            <p class="help-block danger"> {{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button bg-blue is-uppercase">Add User</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
